@@ -39,8 +39,6 @@ function minjs(){
         .pipe(rename("base64.min.js"))
         .pipe(gulp.dest(resolveFile("dist")))
 }
-function removeFile(){
-    return del([resolveFile("dist/webTranslate.dev.js")],{force:true});
-}
+
 
 exports.default=gulp.series(build,minjs);
