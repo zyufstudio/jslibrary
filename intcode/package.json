@@ -9,8 +9,14 @@
   },
   "keywords": [
     "string",
-    "number"
+    "number",
+    "javascript"
   ],
+  "repository": {
+    "type": "url",
+    "url": "https://github.com/zyufstudio/jslibrary/tree/master/intcode"
+  },
+
   "author": "Johnny Li",
   "license": "MIT",
   "devDependencies": {

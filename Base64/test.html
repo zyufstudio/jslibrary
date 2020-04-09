@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>intcode</title>
+    <script src="./dist/base64.min.js"></script>
+</head>
+<body>
+    <div>text:<input type="text" name="" id="entext" value=""> <button onclick="enbase64()">encode base64</button></div>
+    <div>base64 text: <span id="base64text"></span></div>
+    <div>text:<input type="text" name="" id="detext" value=""> <button onclick="debase64()">decode base64</button></div>
+    <div>base64 text: <span id="text"></span></div>
+</body>
+</html>
+<script>
+    function enbase64(){
+        var txt=document.getElementById("entext").value;
+        var base64codetxt=Base64.encode(txt);
+        document.getElementById("base64text").innerText=base64codetxt;
+    }
+    function debase64(){
+        var txt=document.getElementById("detext").value;
+        var codetxt=Base64.decode(txt);
+        document.getElementById("text").innerText=codetxt;
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>intcode</title>
+    <script src="./dist/intcode.min.js"></script>
+</head>
+<body>
+    <div>text:<input type="text" name="" id="entext" value=""> <button onclick="enIntcode()">encode intcode</button></div>
+    <div>intcode text: <span id="inttext"></span></div>
+    <div>text:<input type="text" name="" id="detext" value=""> <button onclick="deIntcode()">decode intcode</button></div>
+    <div>intcode text: <span id="text"></span></div>
+</body>
+</html>
+<script>
+    function enIntcode(){
+        var txt=document.getElementById("entext").value;
+        var intcodetxt=intcode.encode(txt);
+        document.getElementById("inttext").innerText=intcodetxt;
+    }
+    function deIntcode(){
+        var txt=document.getElementById("detext").value;
+        var codetxt=intcode.decode(txt);
+        document.getElementById("text").innerText=codetxt;
+    }
+</script>

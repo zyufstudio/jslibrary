@@ -2,11 +2,19 @@
   "name": "base64",
   "version": "1.1.0",
   "description": "Base64 encode and decode",
-  "main": "Base64.js",
+  "main": "base64.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build":"node_modules/.bin/gulp -f ./build/build.js"
   },
+  "repository": {
+    "type": "url",
+    "url": "https://github.com/zyufstudio/jslibrary/tree/master/Base64"
+  },
+  "keywords": [
+    "base64",
+    "javascript"
+  ],
   "author": "Johnny Li",
   "license": "MIT",
   "devDependencies": {
