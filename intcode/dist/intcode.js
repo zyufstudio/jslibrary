@@ -141,27 +141,28 @@ var intcode = (function () {
          */
         encode:function(string){
             var base64str=Base64.encode(string);
-            var stnStr="";
+            var intcodeStr="";
             for (var n = 0; n < base64str.length; n++) {
                 var charAsciiCode=base64str.charCodeAt(n).toString();
                 var charAsciiCodeLength=charAsciiCode.length;
                 if(charAsciiCodeLength<3){
                     charAsciiCode="0"+charAsciiCode;
                 }
-                stnStr+=charAsciiCode;
+                intcodeStr+=charAsciiCode;
             }
-            return stnStr;
+            return intcodeStr;
         },
         /**
          * 解码
-         * @param {string} stntext -密文
+         * @param {string} intcodetext -密文
          */
-        decode:function(stntext){
-            var newstntext=stntext.replace(/(\d)(?=(?:\d{3})+$)/g, "$1,");
-            var stntextlist=newstntext.split(",");
+        decode:function(intcodetext){
+            //每隔3位数字后面插入一个逗号
+            var newintcodetext=intcodetext.replace(/(\d)(?=(?:\d{3})+$)/g, "$1,");
+            var intcodetextlist=newintcodetext.split(",");
             var base64str="";
-            for (var i = 0; i < stntextlist.length; i++) {
-                var asciiCode = stntextlist[i];
+            for (var i = 0; i < intcodetextlist.length; i++) {
+                var asciiCode = intcodetextlist[i];
                 var char=String.fromCharCode(asciiCode);
                 base64str+=char;
             }
